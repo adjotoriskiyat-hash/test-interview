@@ -1,20 +1,21 @@
 const express = require('express');
 const mysql = require('mysql2/promise');
+const path = require('path');
 const fs = require('fs');
 require('dotenv').config();
 
 const app = express();
 
-// Setting up EJS so you can quickly render HTML without a separate React frontend
+// Setting up EJS so i can quickly render HTML without a separate React frontend
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded({ extended: true })); // Needed for Question 3's form submission
 
 // Create the Aiven MySQL Connection Pool
 const pool = mysql.createPool({
     uri: process.env.DATABASE_URL,
         ssl: {
-                ca: fs.readFileSync(__dirname + '/ca.pem'),
-                        rejectUnauthorized: true
+                rejectUnauthorized: false
                             }
                             });
 
