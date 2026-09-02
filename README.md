@@ -3,7 +3,7 @@
 This project is a technical assessment for the PHP/MySQL Developer Internship at Bincom Dev Center. As permitted in **Step 0 (Option C)** of the instructions, this solution is built using **JavaScript (Node.js/Express.js)** and **MySQL**.
 
 ## 🚀 Live Demo
-[Insert Your Deployed Link Here]
+https://bincom-tech-assessment.vercel.app/
 
 ## 🛠️ Technology Stack
 * **Backend:** Node.js, Express.js
@@ -29,7 +29,7 @@ To run this project locally on your machine:
          npm install
          
 ## Environment Variables:
-      ```bash  
+      ```bash 
          Create a .env file in the root directory and add your database connection string:
          DATABASE_URL="your_mysql_database_url_here"
 (Note: The database requires an SSL CA certificate to connect successfully).
