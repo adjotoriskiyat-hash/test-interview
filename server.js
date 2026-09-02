@@ -19,15 +19,11 @@ const pool = mysql.createPool({
                             }
                             });
 
-                            // Test route to ensure DB connects
-                            app.get('/', async (req, res) => {
-                                try {
-                                        const [rows] = await pool.query('SELECT 1 + 1 AS solution');
-                                                res.send(`Database connected! Solution: ${rows[0].solution}`);
-                                                    } catch (err) {
-                                                            res.status(500).send('Database connection failed: ' + err.message);
-                                                                }
-                                                                });
+                            // Homepage Route
+                app.get('/', (req, res) => {
+                  res.render('index');
+                });
+
 // Question 1: Display result for any individual polling unit
 app.get('/question1', async (req, res) => {
     try {
